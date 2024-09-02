@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { createNote } from '../services/api';
+import '../styles/CreateNote.css'; 
 
 const CreateNote = () => {
   const [noteId, setNoteId] = useState('');
@@ -22,29 +23,34 @@ const CreateNote = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>Activity Log</h1>
-      <input
-        type="text"
-        value={noteId}
-        onChange={(e) => setNoteId(e.target.value)}
-        placeholder="ID"
-      />
-      <input
-        type="text"
-        value={content}
-        onChange={(e) => setContent(e.target.value)}
-        placeholder="Content"
-      />
-      <input
-        type="text"
-        value={author}
-        onChange={(e) => setAuthor(e.target.value)}
-        placeholder="Author"
-      />
-      <button type="submit">Create</button>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-    </form>
+    <div className="form-container">
+      <form className="create-note-form" onSubmit={handleSubmit}>
+        <h1>Create Note</h1>
+        <input
+          type="text"
+          value={noteId}
+          onChange={(e) => setNoteId(e.target.value)}
+          placeholder="ID"
+          className="form-input"
+        />
+        <input
+          type="text"
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
+          placeholder="Content"
+          className="form-input"
+        />
+        <input
+          type="text"
+          value={author}
+          onChange={(e) => setAuthor(e.target.value)}
+          placeholder="Author"
+          className="form-input"
+        />
+        <button type="submit" className="submit-button">Create</button>
+        {error && <p className="error-message">{error}</p>}
+      </form>
+    </div>
   );
 };
 
