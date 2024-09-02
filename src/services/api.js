@@ -3,8 +3,13 @@ import axios from 'axios';
 const API_BASE_URL = 'https://gmwrezbzf9.execute-api.us-east-1.amazonaws.com/dev'; // API endpoint
 
 export const getNotes = async () => {
-  const response = await axios.get(`${API_BASE_URL}/notes`);
-  return response.data;
+  try {
+    const response = await axios.get(`${API_BASE_URL}/notes`);
+    return response.data.data; // Access the notes property
+  } catch (error) {
+    console.error('Error fetching notes:', error);
+    return []; // Return an empty array to avoid errors
+  }
 };
 
 export const getNote = async (id) => {

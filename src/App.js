@@ -1,8 +1,7 @@
 import React from 'react';
-import NotesList from './NotesList';
-import CreateNote from './CreateNote';
+import NotesList from './Components/NotesList';
+import CreateNote from './Components/CreateNote';
 import './styles.css';
-
 
 const App = () => {
   return (

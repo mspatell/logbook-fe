@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { createNote } from './apiService';
+import { createNote } from '../services/api';
 
 const CreateNote = () => {
   const [noteId, setNoteId] = useState('');
