@@ -48,16 +48,14 @@ const NotesList = () => {
 
   const handleStrikeThrough = async (id) => {
     try {
-      // Find the note to update
       const updatedNotes = notes.map(note => 
         note.noteId === id 
           ? { ...note, strikethrough: !note.strikethrough } 
           : note
       );
       
-      setNotes(updatedNotes); // Update UI immediately
+      setNotes(updatedNotes);
 
-      // Send the update to the server
       await updateNoteStrikeThrough(id, !notes.find(note => note.noteId === id).strikethrough);
     } catch (err) {
       setError('Error updating note. Please try again.');
@@ -67,7 +65,10 @@ const NotesList = () => {
 
   return (
     <div className="container">
-      <h1>Logs</h1>
+      <header className="header">
+        <h1>Logs</h1>
+        <button onClick={fetchNotes} className="refresh-button">Refresh</button>
+      </header>
       {error && <p className="error">{error}</p>}
       <table className="notes-table">
         <thead>
@@ -86,9 +87,9 @@ const NotesList = () => {
                 <td>{note.content}</td>
                 <td>{note.author}</td>
                 <td>
-                  <button onClick={() => handleEdit(note)}>Edit</button>
-                  <button onClick={() => handleDelete(note.noteId)}>Delete</button>
-                  <button onClick={() => handleStrikeThrough(note.noteId)}>Toggle Strike-through</button>
+                  <button onClick={() => handleEdit(note)} className="edit-button">Edit</button>
+                  <button onClick={() => handleDelete(note.noteId)} className="delete-button">Delete</button>
+                  <button onClick={() => handleStrikeThrough(note.noteId)} className="strike-through-button">Toggle Strike-through</button>
                 </td>
               </tr>
             ))
