@@ -25,7 +25,7 @@ const CreateNote = () => {
   return (
     <div className="form-container">
       <form className="create-note-form" onSubmit={handleSubmit}>
-        <h1>Add Log</h1>
+        <h1>Activity Log</h1>
         <input
           type="text"
           value={noteId}
