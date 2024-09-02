@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'https://gmwrezbzf9.execute-api.us-east-1.amazonaws.com/dev'; // API endpoint
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
 export const getNotes = async () => {
   try {
