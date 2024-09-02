@@ -31,3 +31,8 @@ export const deleteNote = async (id) => {
   const response = await axios.delete(`${API_BASE_URL}/note/${id}`);
   return response.data;
 };
+
+export const updateNoteStrikeThrough = async (id, strikethrough) => {
+  const response = await axios.put(`${API_BASE_URL}/note/${id}`, { strikethrough });
+  return response.data;
+};
