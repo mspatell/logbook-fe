@@ -23,12 +23,12 @@ const CreateNote = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h1>Create Note</h1>
+      <h1>Activity Log</h1>
       <input
         type="text"
         value={noteId}
         onChange={(e) => setNoteId(e.target.value)}
-        placeholder="Note ID"
+        placeholder="ID"
       />
       <input
         type="text"

@@ -47,7 +47,7 @@ const NotesList = () => {
 
   return (
     <div>
-      <h1>Notes</h1>
+      <h1>Logs</h1>
       {error && <p className="error">{error}</p>}
       <ul>
         {Array.isArray(notes) && notes.length > 0 ? (

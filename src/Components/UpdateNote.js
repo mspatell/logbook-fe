@@ -39,7 +39,7 @@ const UpdateNote = ({ noteId, onClose }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h1>Update Note</h1>
+      <h1>Update Log with note</h1>
       <input
         type="text"
         value={noteContent}
