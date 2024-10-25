@@ -5,9 +5,13 @@ import './styles.css';
 
 const App = () => {
   return (
-    <div>
-      <CreateNote />
-      <NotesList />
+    <div className="app-container">
+      <div className="create-note-section">
+        <CreateNote />
+      </div>
+      <div className="notes-list-section">
+        <NotesList />
+      </div>
     </div>
   );
 };

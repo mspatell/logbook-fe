@@ -1,60 +1,88 @@
 /* CreateNote.css */
 
+:root {
+  --primary-color: #007bff;
+  --primary-hover-color: #0056b3;
+  --background-color: #f5f5f5;
+  --text-color: #333333;
+  --error-color: #ff0000;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  .form-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f5f5f5;
-  }
-  
-  .create-note-form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 400px;
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .create-note-form h1 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333333;
-  }
-  
-  .form-input {
-    margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-  }
-  
-  .submit-button {
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    background-color: #007bff;
-    color: #ffffff;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .submit-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .error-message {
-    margin-top: 10px;
-    color: #ff0000;
-  }
-  
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.create-note-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  background-color: #ffffff;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.2s ease-in-out;
+}
+
+.create-note-form:hover {
+  transform: translateY(-2px);
+}
+
+.create-note-form h1 {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  text-align: center;
+  margin: 0 0 20px 0;
+}
+
+.form-input {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.form-input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.submit-button {
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.submit-button:hover {
+  background-color: var(--primary-hover-color);
+  transform: translateY(-2px);
+}
+
+.error-message {
+  font-size: 0.875rem;
+  color: var(--error-color);
+  text-align: center;
+}
